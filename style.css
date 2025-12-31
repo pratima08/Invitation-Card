@@ -13,6 +13,7 @@ body{
   overflow-x: hidden;
     overflow-y: auto;
 }
+
 section {
   scroll-margin-top: 80px; 
 }
@@ -30,6 +31,10 @@ section {
     color: whitesmoke;
  }
  #logo{
+  font-family: "Tapestry", serif;
+  font-weight: 400;
+  /* font-family: "style script", cursive; */
+  font-weight: 400;
     max-width: 100%;
     font-size: 2rem;
     font-weight: bolder;
@@ -46,7 +51,7 @@ section {
     align-items: center;
     font-size: 30px;
     padding-top: 10px;
-    margin-right: 12px;
+    margin-right: 15px;
     /* color: #fff1b8; */
     position: fixed;
     top: 20px;
@@ -97,7 +102,6 @@ section {
   font-size: clamp(36px, 5vw, 64px);
   margin-bottom: 10px;
   font-weight: bolder;
-
   font-family: "Playfair", serif;
 }
 
@@ -130,27 +134,27 @@ section {
 
 
 /* Dots Background */
-.dots-bg {
+/* .dots-bg {
   position: absolute;
   inset: 0;
   overflow: hidden;
   z-index: 1;
   pointer-events: none;
-}
+} */
 
-.dots-bg span {
+/* .dots-bg span {
   position: absolute;
   bottom: -20px;
-  width: 6px;
-  height: 6px;
-  background: rgba(244,196,0,0.8); /* golden */
+  width: 20px;
+  height: 20px;
+  background: rgba(244,196,0,0.8); 
   border-radius: 50%;
   animation: dotMove 12s linear infinite;
   opacity: 0;
-}
+} */
 /* Animation For Background Dots */
 /* random positions & delay */
-.dots-bg span:nth-child(1){ left:10%; animation-delay:0s; }
+/* .dots-bg span:nth-child(1){ left:10%; animation-delay:0s; }
 .dots-bg span:nth-child(2){ left:20%; animation-delay:3s; }
 .dots-bg span:nth-child(3){ left:35%; animation-delay:6s; }
 .dots-bg span:nth-child(4){ left:50%; animation-delay:1s; }
@@ -159,19 +163,79 @@ section {
 .dots-bg span:nth-child(7){ left:30%; animation-delay:9s; }
 .dots-bg span:nth-child(8){ left:55%; animation-delay:11s; }
 .dots-bg span:nth-child(9){ left:75%; animation-delay:2s; }
-.dots-bg span:nth-child(10){ left:90%; animation-delay:5s; }
+.dots-bg span:nth-child(10){ left:90%; animation-delay:5s; } */
 
-@keyframes dotMove {
+/* @keyframes dotMove {
   0% {
     transform: translateY(0) scale(0.6);
     opacity: 0;
   }
   20% { opacity: 0.7; }
   100% {
-    transform: translateY(-110vh) scale(1.2);
+    transform: translateY(-110vh) scale(2.5);
+    opacity: 0;
+  }
+} */
+
+
+/* Heart base */
+.dots-bg span {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background: rgba(244,196,0,0.8);
+  transform: rotate(45deg);
+  animation: heartMove 8s linear infinite;
+  opacity: 0;
+}
+
+/* Left circle */
+.dots-bg span::before,
+.dots-bg span::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background: rgba(244,196,0,0.8);
+  border-radius: 50%;
+}
+
+/* top circle */
+.dots-bg span::before {
+  top: -8px;
+  left: 0;
+}
+
+/* left circle */
+.dots-bg span::after {
+  left: -8px;
+  top: 0;
+}
+
+@keyframes heartMove {
+  0% {
+    transform: translateY(0) scale(1) rotate(45deg);
+    opacity: 0;
+  }
+  20% { opacity: 0.8; }
+  100% {
+    transform: translateY(-120vh) scale(1.5) rotate(45deg);
     opacity: 0;
   }
 }
+
+.dots-bg span:nth-child(1){ left:5%;  animation-delay:0s; }
+.dots-bg span:nth-child(2){ left:15%; animation-delay:1s; }
+.dots-bg span:nth-child(3){ left:25%; animation-delay:2s; }
+.dots-bg span:nth-child(4){ left:35%; animation-delay:3s; }
+.dots-bg span:nth-child(5){ left:45%; animation-delay:4s; }
+.dots-bg span:nth-child(6){ left:55%; animation-delay:5s; }
+.dots-bg span:nth-child(7){ left:65%; animation-delay:6s; }
+.dots-bg span:nth-child(8){ left:75%; animation-delay:7s; }
+.dots-bg span:nth-child(9){ left:85%; animation-delay:8s; }
+.dots-bg span:nth-child(10){ left:95%; animation-delay:9s; }
+
+
 /* Events Section */
 
 #Events{
@@ -423,7 +487,7 @@ ul li {
     text-decoration: #FDB813 underline;
   }
  .nev_list li a{
-    text-decoration: ;
+    text-decoration: none;
     color: rgba(255, 255, 255, 0.647);
     font-weight: bold;
   }

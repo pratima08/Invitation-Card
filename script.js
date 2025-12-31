@@ -94,3 +94,35 @@ function typeText(element, text) {
     }
   }, 120);
 }
+
+
+// 🔹 Close menu when clicking any menu link
+document.querySelectorAll(".nev_list a").forEach(link => {
+  link.addEventListener("click", () => {
+    ul.classList.remove("showData");
+    document.getElementById("bar").className = "fa-solid fa-list";
+  });
+});
+
+
+
+document.addEventListener("touchstart", (e) => {
+  if (
+    ul.classList.contains("showData") &&
+    !ul.contains(e.target) &&
+    !icon.contains(e.target)
+  ) {
+    ul.classList.remove("showData");
+    document.getElementById("bar").className = "fa-solid fa-list";
+  }
+});
+
+
+
+// 🔹 Close menu on scroll (especially mobile)
+window.addEventListener("scroll", () => {
+  if (ul.classList.contains("showData")) {
+    ul.classList.remove("showData");
+    document.getElementById("bar").className = "fa-solid fa-list";
+  }
+});
