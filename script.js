@@ -117,3 +117,11 @@ document.addEventListener("touchstart", (e) => {
   }
 });
 
+
+
+  document.addEventListener("click", function () {
+    const music = document.getElementById("bg-music");
+    if (music.paused) {
+      music.play();
+    }
+  }, { once: true });
