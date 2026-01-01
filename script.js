@@ -117,12 +117,3 @@ document.addEventListener("touchstart", (e) => {
   }
 });
 
-
-
-// 🔹 Close menu on scroll (especially mobile)
-window.addEventListener("scroll", () => {
-  if (ul.classList.contains("showData")) {
-    ul.classList.remove("showData");
-    document.getElementById("bar").className = "fa-solid fa-list";
-  }
-});

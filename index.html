@@ -6,13 +6,20 @@
     <title>Avinash weds Yogita Wedding Invitation</title>
     <link rel="stylesheet" href="style.css">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
 </head>
 <body>
-    <!-- Navbar Section  -->
-    <section id="nevbar_section">
-        <div id="navbar">
 
+        <audio id="bg-music" autoplay loop>
+             <source src="music/wedding song.mpeg" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <button onclick="document.getElementById('bg-music').play()"
+        style="position:fixed; bottom:20px; right:20px; z-index:9999;">
+        🔊Play Music
+        </button>
+
+    <!-- Navbar Section  -->
+     <section id="nevbar_section">
             <h3 id="logo">Avi ki Yogi</h3>
             <ul class="nev_list">
                 <li><a href="#Home">Home</a></li>
@@ -52,7 +59,7 @@
         <h2 class="section-title">Wedding Functions</h2>
         <p class="section-desc">Join us in celebrating the beautiful journey of love through vibrant ceremonies and unforgettable moments</p>
         <div  class="events-grid">
-            <div class="card haldi">
+            <div class="card haldi data-music="haldiMusic">
             <div class="content">
                 <span class="icons"><i class="fa-regular fa-sun"></i></span>
                 <h2>Haldi</h2>
@@ -66,7 +73,7 @@
             </div>
         </div>
 
-            <div class="card mehndi">
+            <div class="card mehndi"  data-music="mehndiMusic">
             <div class="content">
                 <span class="icons"><i class="fa-solid fa-leaf"></i></span>
                 <h2>Mehndi</h2>
@@ -79,7 +86,7 @@
                 </ul>
             </div>
         </div>
-        <div class="card sangeet">
+        <div class="card sangeet"  data-music="sangeetMusic">
             <div class="content">
                 <span class="icons"><i class="fa-solid fa-music"></i></span>
                 <h2>Sangeet</h2>
@@ -94,7 +101,7 @@
             </div>
         </div>
         
-        <div class="card wedding">
+        <div class="card wedding" data-music="weddingMusic">
             <div class="content">
                 <span class="icons"><i class="fa-solid fa-crown"></i></span>
                 <h2>Wedding</h2>
