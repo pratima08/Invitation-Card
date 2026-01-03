@@ -6,6 +6,13 @@
     <title>Avinash weds Yogita Wedding Invitation</title>
     <link rel="stylesheet" href="style.css">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+   <script>
+        fetch('https://api.countapi.xyz/hit/pratima-invitation/visits')
+        .then(res => res.json())
+        .then(data => {
+        document.getElementById('visits').innerText = data.value;
+        });
+   </script>
 </head>
 <body>
 
@@ -46,6 +53,8 @@
         <span></span><span></span><span></span><span></span><span></span>
         <span></span><span></span><span></span><span></span><span></span>
         </div>
+
+        <p style="text-align: end;padding-right: 10px;">Total Visitors: <span id="visits">0</span></p>
     </section>
    
     <!-- Event Section Details  -->
