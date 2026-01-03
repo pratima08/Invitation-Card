@@ -6,13 +6,6 @@
     <title>Avinash weds Yogita Wedding Invitation</title>
     <link rel="stylesheet" href="style.css">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-   <script>
-        fetch('https://api.countapi.xyz/hit/pratima-invitation/visits')
-        .then(res => res.json())
-        .then(data => {
-        document.getElementById('visits').innerText = data.value;
-        });
-   </script>
 </head>
 <body>
 
@@ -183,5 +176,19 @@
   </div>
 </section>
     <script src="script.js"></script>
+    <script>
+  const namespace = "pratima08-github-io";   // unique naam
+  const key = "invitation-card";             // page ka naam
+
+  fetch(`https://api.counterapi.dev/v1/${namespace}/${key}/up`)
+    .then(response => response.json())
+    .then(data => {
+      document.getElementById("visitor-count").innerText = data.count;
+    })
+    .catch(error => {
+      console.log("Counter error:", error);
+    });
+</script>
+
 </body>
 </html>
