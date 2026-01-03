@@ -6,9 +6,6 @@ icon.addEventListener("click", ()=>{
 
     if(ul.classList.contains("showData")){
         document.getElementById("bar").className="fa-regular fa-circle-xmark";
-
-        showVisitorOnMenuOpen();
-
     }else{
         document.getElementById("bar").className="fa-solid fa-list";
     }
@@ -141,36 +138,3 @@ document.addEventListener("touchstart", (e) => {
     music.muted = false;
     music.play();
   }, { once: true });
-
-
-
- 
-  
-/* ===== VISITOR COUNT (ONLY FOR YOU) ===== */
-
-const OWNER_MODE = true; // false kar dogi to kisi ko bhi nahi dikhega
-const NAMESPACE = "pratima08-invitation-card";
-const KEY = "visitors";
-
-function shouldCountVisit() {
-  if (sessionStorage.getItem("visited")) return false;
-  sessionStorage.setItem("visited", "yes");
-  return true;
-}
-
-async function updateVisitorCount() {
-  const url = shouldCountVisit()
-    ? `https://api.countapi.xyz/hit/${NAMESPACE}/${KEY}`
-    : `https://api.countapi.xyz/get/${NAMESPACE}/${KEY}`;
-
-  const res = await fetch(url);
-  const data = await res.json();
-  document.getElementById("visitorCount").innerText = data.value;
-}
-
-function showVisitorOnMenuOpen() {
-  if (OWNER_MODE) {
-    document.getElementById("admin-visitor-box").style.display = "block";
-    updateVisitorCount();
-  }
-}

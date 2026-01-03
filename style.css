@@ -466,23 +466,6 @@ ul li {
   transform: translateY(0);
 }
 
-.visitor-box {
-  display: none;
-  margin: 25px 15px 10px;
-  padding: 12px;
-  font-size: 14px;
-  text-align: center;
-  color: #fff;
-  background: rgba(0, 0, 0, 0.65);
-  border-radius: 10px;
-}
-
-/* 🔑 Menu open → show */
-.nev_list.showData .visitor-box {
-  display: block;
-}
-
-
 
 
 /*  For Small Screen */
